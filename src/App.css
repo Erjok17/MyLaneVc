@@ -1,0 +1,219 @@
+/* Reset */
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.homepage {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Overlay with flex to align right */
+.overlay {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  padding: 2rem 4rem;
+  background: rgba(0, 0, 0, 0.3); /* optional dim overlay */
+}
+
+.form-container {
+  background: rgba(0, 0, 0, 0.6); /* transparent gray */
+  padding: 2.5rem;
+  border-radius: 16px;
+  max-width: 450px;
+  height: 400px;
+  width: 100%;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* even spacing between items */
+}
+
+
+.form-container h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: #111827;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* space between labels and inputs */
+}
+
+.form-container label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: #BD984D; /* dark text for readability */
+  font-size: 1.95rem;
+}
+
+.form-container input {
+  padding: 0.85rem 0.4rem;
+  border-radius: 10px;
+  border: 1px solid #f9fafc;
+  outline: none;
+  font-size: 1rem;
+  transition: border 0.2s ease;
+  width: 100%;
+  margin-right: 110px;
+}
+
+.form-container input:focus {
+  border: 1px solid #2563eb;
+  box-shadow: 0 0 4px rgba(37, 99, 235, 0.5);
+}
+
+.form-container button {
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #BD984D;
+  color: rgb(2, 2, 2);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+  margin-top: 5.5rem;
+}
+
+.form-container button:hover {
+  background: #d81d1d;
+}
+
+.form-container button:active {
+  transform: scale(0.98);
+}
+
+/* Optional: add a subtle footer link */
+.form-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.form-footer a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+.left-side {
+  color: white;
+  max-width: 40%;
+}
+
+.left-side .logo-space {
+  margin-bottom: 1.5rem;
+}
+
+.left-side img {
+  max-width: 120px; /* adjust size of logo */
+  height: auto;
+}
+
+.left-side h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  color: #f3f4f6; /* lighter text for readability */
+}
+.left-side p {
+  font-size: 2.2rem;
+  line-height: 0.5;
+  margin-top: 1rem;
+  color: #f3f4f6; /* lighter text for readability */
+}
+
+/* Marquee styles */
+.logo-marquee {
+  position: absolute;  /* or fixed if you want it always visible */
+  bottom: 20px;        /* slightly above bottom */
+  width: 100%;
+  padding: 10px 0;
+  margin: 50px 0 0 0; /* space from bottom */
+}
+
+.marquee-logo {
+  height: 40px;       /* logo size */
+  margin-right: 100px; /* space between logos */
+  object-fit: contain;
+}
+
+
+/* Responsive: Mobile view */
+@media (max-width: 768px) {
+  .overlay {
+    flex-direction: column;     /* stack vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .left-side {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .left-side img {
+    max-width: 100px; /* shrink logo */
+    margin-bottom: 1rem;
+  }
+
+  .left-side h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .left-side p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .form-container {
+    max-width: 90%;
+    width: 100%;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .form-container input,
+  .form-container button {
+    font-size: 1rem;
+  }
+
+  .form-container button {
+    margin-top: 1.5rem; /* less empty space on mobile */
+  }
+}

@@ -1,0 +1,399 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Enhanced Header Styles */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.header-left .logo {
+  height: 40px;
+}
+
+.header-left h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.header-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  position: relative;
+  width: 70%;
+  max-width: 400px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.welcome-message {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.icon-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.notifications-btn {
+  position: relative;
+}
+
+.notification-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ff4757;
+  color: white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 0.5rem;
+  min-width: 150px;
+  z-index: 100;
+}
+
+.user-profile:hover .user-dropdown {
+  display: block;
+}
+
+/* Rest of the existing styles remain the same */
+.dashboard-content {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #fff;
+  padding: 1.5rem 0;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.1);
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-nav li {
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sidebar-nav li:hover {
+  background-color: #f0f0f0;
+}
+
+.sidebar-nav li.active {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.companies-section h2,
+.expense-section h2,
+.statistics-section h2,
+.documents-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.companies-list {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.company-card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex: 1;
+  min-width: 200px;
+}
+
+.company-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.company-card p {
+  margin: 0.25rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.expense-section,
+.statistics-section {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.expense-amount {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.expense-timeline {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.expense-timeline span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.statistics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.statistic-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.percentage {
+  font-weight: bold;
+  color: #333;
+}
+
+.company-name {
+  color: #666;
+}
+
+.documents-section {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.document-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.document-tabs button {
+  padding: 0.5rem 1rem;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.document-tabs button.active {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+.documents-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.documents-table th,
+.documents-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.documents-table th {
+  font-weight: bold;
+  color: #333;
+}
+
+.download-btn {
+  padding: 0.25rem 0.5rem;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.dashboard-footer {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.view-all-btn {
+  padding: 0.5rem 1rem;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .header-center {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    flex-direction: column;
+  }
+  
+  .dashboard-header {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .header-right {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .sidebar {
+    width: 100%;
+    order: 2;
+  }
+  
+  .companies-list {
+    flex-direction: column;
+  }
+  
+  .document-tabs {
+    overflow-x: auto;
+  }
+  
+  .documents-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .welcome-message {
+    display: none;
+  }
+}
